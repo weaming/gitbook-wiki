@@ -62,6 +62,8 @@
     * [《你不可不知的人性》](./wiki/9.ReadNote/《你不可不知的人性》.md)
     * [《JavaScript设计模式与开发实践》](./wiki/9.ReadNote/《JavaScript设计模式与开发实践》.md)
 * [10.Experience](./wiki/10.Experience/index.md)
+    * [How to stop multiple process using supervisor](./wiki/10.Experience/How to stop multiple process using supervisor.md)
+    * [gvim74 提示报错"无法加载库python27.dll"](./wiki/10.Experience/gvim74 提示报错"无法加载库python27.dll".md)
     * [Gogs部署注意点](./wiki/10.Experience/Gogs部署注意点.md)
     * [Go语言使用中的注意点](./wiki/10.Experience/Go语言使用中的注意点.md)
 * 11.NODEJS
