@@ -1,0 +1,17 @@
+.book-summary {
+    background: url(https://raw.githubusercontent.com/weaming/gitbook-wiki/master/styles/poetry.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.book-summary a,
+.book-summary span {
+    color: white !important;
+    font-weight: bold;
+}
+
+#book-search-input,
+#book-search-input input {
+    background: transparent !important;
+}
