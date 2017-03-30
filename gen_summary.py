@@ -13,7 +13,7 @@ def link(text, url, prefix='', suffix=''):
     return '{}[{}]({}){}'.format(prefix, text, url, suffix)
 
 
-def main():
+def main(url_prefix=''):
     lines = []
     deepth = 0
     prefix = '* '

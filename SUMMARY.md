@@ -1,4 +1,3 @@
-* [Contents](.SUMMARY.md)
 * 1.PYTHON
     * [为自己带“盐”的函数](./wiki/1.Python/为自己带“盐”的函数.md)
     * [Python包管理](./wiki/1.Python/Python包管理.md)
@@ -63,6 +62,7 @@
     * [《你不可不知的人性》](./wiki/9.ReadNote/《你不可不知的人性》.md)
     * [《JavaScript设计模式与开发实践》](./wiki/9.ReadNote/《JavaScript设计模式与开发实践》.md)
 * [10.Experience](./wiki/10.Experience/index.md)
+    * [Docker设置HTTP代理](./wiki/10.Experience/Docker设置HTTP代理.md)
     * [How to stop multiple process using supervisor](./wiki/10.Experience/How to stop multiple process using supervisor.md)
     * [gvim74 提示报错"无法加载库python27.dll"](./wiki/10.Experience/gvim74 提示报错"无法加载库python27.dll".md)
     * [Gogs部署注意点](./wiki/10.Experience/Gogs部署注意点.md)
