@@ -1,7 +1,7 @@
 * 1.PYTHON
-    * [为自己带“盐”的函数](./wiki/1.Python/为自己带“盐”的函数.md)
-    * [Python包管理](./wiki/1.Python/Python包管理.md)
     * [Python2 编码](./wiki/1.Python/Python2 编码.md)
+    * [Python是很动态的语言](./wiki/1.Python/Python是很动态的语言.md)
+    * [Python包管理](./wiki/1.Python/Python包管理.md)
     * [Python 魔术方法](./wiki/1.Python/Python 魔术方法.md)
     * [Python 装饰器](./wiki/1.Python/Python 装饰器.md)
     * [Python 异常](./wiki/1.Python/Python 异常.md)
@@ -18,7 +18,6 @@
     * [CSS 优先级](./wiki/2.FrontEnd/CSS 优先级.md)
 * 3.HTTP
     * [chat-about-https](./wiki/3.HTTP/chat-about-https.md)
-    * [TCP-IP书籍](./wiki/3.HTTP/TCP-IP书籍.md)
     * [HTTPS](./wiki/3.HTTP/HTTPS.md)
     * [Cookie](./wiki/3.HTTP/Cookie.md)
 * 4.LINUX
@@ -58,25 +57,19 @@
 * 8.OSX
     * [与virtualbox共享目录](./wiki/8.OSX/与virtualbox共享目录.md)
 * 9.READNOTE
+    * [haskell-quick-note](./wiki/9.ReadNote/haskell-quick-note.md)
     * [《高性能网站建设指南》](./wiki/9.ReadNote/《高性能网站建设指南》.md)
     * [《你不可不知的人性》](./wiki/9.ReadNote/《你不可不知的人性》.md)
     * [《JavaScript设计模式与开发实践》](./wiki/9.ReadNote/《JavaScript设计模式与开发实践》.md)
 * [10.Experience](./wiki/10.Experience/index.md)
-    * [Docker设置HTTP代理](./wiki/10.Experience/Docker设置HTTP代理.md)
+    * [gvim74无法加载库python27.dll](./wiki/10.Experience/gvim74无法加载库python27.dll.md)
     * [How to stop multiple process using supervisor](./wiki/10.Experience/How to stop multiple process using supervisor.md)
-    * [gvim74 提示报错"无法加载库python27.dll"](./wiki/10.Experience/gvim74 提示报错"无法加载库python27.dll".md)
-    * [Gogs部署注意点](./wiki/10.Experience/Gogs部署注意点.md)
     * [Go语言使用中的注意点](./wiki/10.Experience/Go语言使用中的注意点.md)
+    * [Gogs部署注意点](./wiki/10.Experience/Gogs部署注意点.md)
+    * [Docker设置HTTP代理](./wiki/10.Experience/Docker设置HTTP代理.md)
 * 11.NODEJS
     * [如何学习React](./wiki/11.NodeJS/如何学习React.md)
     * [webpack-howto-zhCN](./wiki/11.NodeJS/webpack-howto-zhCN.md)
-* 88.PHOTOS
-    * [梧桐山](./wiki/88.Photos/梧桐山.md)
-    * [方正悠黑字体](./wiki/88.Photos/方正悠黑字体.md)
-    * [世界之窗](./wiki/88.Photos/世界之窗.md)
-    * [Sunset](./wiki/88.Photos/Sunset.md)
-    * [Raspberry1](./wiki/88.Photos/Raspberry1.md)
-    * [Hometown](./wiki/88.Photos/Hometown.md)
 * [98.WEB-NOTE](./wiki/98.WEB-NOTE/index.md)
     * [学习Sqlalchemy-目录.html](./wiki/98.WEB-NOTE/学习Sqlalchemy-目录.html.md)
     * [SQLAlchemy学习笔记](./wiki/98.WEB-NOTE/SQLAlchemy学习笔记.md)

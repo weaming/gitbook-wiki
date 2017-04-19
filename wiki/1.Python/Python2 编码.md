@@ -1,4 +1,4 @@
-ascii --> unicode --> utf-8
+0.概览
 
 - ascii：最早的，容量最小的编码方式。1个字节表示一个字符。
 - unicode：加入多国字符，一般是2个字节表示一个字符，偏僻字用4个字节。缺点：浪费存储空间。
@@ -61,7 +61,7 @@ u'\u4e2d\u6587'
 5.str --> utf-8
 --
 ```
-# UTF-8无法解码str
+# UTF-8无法解码str (可能跟系统是windows有关，CMD默认编码是GBK)
 >>> a.decode('utf8')
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
