@@ -1,3 +1,4 @@
+# Learning zsh
 ## Configure
 ### Starts up files
 

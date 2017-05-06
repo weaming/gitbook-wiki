@@ -1,5 +1,6 @@
-概述
---
+# Ubuntu包管理
+## 概述
+
 常用的包管理包含三类工具：dpkg、apt和aptitude。[>>][ubuntu-wiki]
 
 dpkg 主要是对本地的软件包进行管理，本地软件包包括已经在本地安装的软件包和已经下载但还没有安装的 deb 文件，不解决依赖关系。
@@ -8,8 +9,8 @@ dpkg 主要是对本地的软件包进行管理，本地软件包包括已经在
 - apt-cache 主要用来查询软件包的状态和依赖关系；apt-file 主要负责查询软件包名称和软件包包含的文件（值得注意的是它要自己同步）；apt-cross 主要负责为交叉编译的软件包的安装与编译等。apt 还包含很多工具，如 apt-offline 可以离线安装软件包，apt-build 可以简化源码编译等等，有兴趣可以学习一下 apt 开头软件包。用`aptitude search ~n^apt`命令(~n 意思是搜索软件包名，^ 是匹配最前面 )可以得到所有以 apt 开头的软件包。
 - aptitude 是更强大的安装工具，有两种基本的使用方法，一种是文本界面，另一种是命令行，这里只讨论命令行操作。
 
-查找软件包
---
+## 查找软件包
+
 ### dpkg
 ```
 dpkg --get-selections pattern #查找软件包名称包含 pattern 的软件包
@@ -52,8 +53,8 @@ aptitude search ~D~npackage #查找哪些软件包依赖于名称是 package 软
 aptitude show ~npattern #显示名称是 pattern 软件包的信息(可以是安装了也可以是没有安装)
 ```
 
-下载软件包
---
+## 下载软件包
+
 ```
 apt-get install package -d #下载软件包
 aptitude download pattern #同上，不同的是下载的是符合 pattern 正则表达式的软件包

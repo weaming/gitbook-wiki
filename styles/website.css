@@ -14,3 +14,9 @@
 #book-search-input input {
     background: transparent !important;
 }
+
+p code,
+li code
+{
+    color: #EB4054 !important;
+}

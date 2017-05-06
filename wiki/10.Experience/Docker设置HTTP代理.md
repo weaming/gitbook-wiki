@@ -1,6 +1,4 @@
-# Control and configure Docker with systemd
-
-## Start the Docker daemon
+## Control and configure Docker with systemd
 
 ### Start manually
 
@@ -20,12 +18,7 @@ do not have `systemctl`, use the `service` command.
   $ sudo service docker start
   ```
 
-### Start automatically at system boot
-
-If you want Docker to start at boot, see
-[Configure Docker to start on boot](/engine/installation/linux/linux-postinstall.md/#configure-docker-to-start-on-boot).
-
-## Custom Docker daemon options
+### Custom Docker daemon options
 
 There are a number of ways to configure the daemon flags and environment variables
 for your Docker daemon. The recommended way is to use the platform-independent
@@ -36,7 +29,7 @@ You can configure nearly all daemon configuration options using `daemon.json`. T
 example configures two options. One thing you cannot configure using `daemon.json` mechanism is
 a [HTTP proxy](#http-proxy).
 
-### Runtime directory and storage driver
+#### Runtime directory and storage driver
 
 You may want to control the disk space used for Docker images, containers
 and volumes by moving it to a separate partition.
@@ -50,7 +43,7 @@ To accomplish this, set the following flags in the `daemon.json` file:
 }
 ```
 
-### HTTP proxy
+#### HTTP proxy
 
 The Docker daemon uses the `HTTP_PROXY` and `NO_PROXY` environmental variables in
 its start-up environment to configure HTTP proxy behavior. You cannot configure
@@ -100,7 +93,7 @@ you will need to add this configuration in the Docker systemd service file.
     $ sudo systemctl restart docker
     ```
 
-#### 另外一种设置代理的方法
+## 另外一种设置代理的方法
 
     sudo vi /etc/default/docker
 

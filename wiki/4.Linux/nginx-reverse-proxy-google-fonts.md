@@ -1,3 +1,5 @@
+# 自己反代Google字体库，实现国内/外均高速访问
+
 未经测试。来源：[自己反代Google字体库，实现国内/外均高速访问](http://hjc.im/google-fonts-reverse-proxy/)
 
 ```
@@ -41,6 +43,7 @@ server {
         proxy_pass http://gstatic;
     }
 }
+
 #下方为HTTPS设置，如果只需要HTTP访问，从这里开始往下的内容就不需要看了。
 server {
     listen 106.186.18.133:443 ssl spdy; #将这一行改为"自己的IP地址:443"

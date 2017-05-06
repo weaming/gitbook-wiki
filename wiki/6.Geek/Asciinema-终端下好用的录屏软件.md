@@ -21,8 +21,8 @@
 
 官方嵌入网页说明：[Sharing & embedding - asciinema](https://asciinema.org/docs/embedding)
 
-`asciinema --help`:
-```txt
+```text
+$ asciinema --help
 usage: asciinema [-h] [-y] [-c <command>] [-t <title>] [action]
 
 Asciicast recorder+uploader.
@@ -37,21 +37,21 @@ Optional arguments:
  -y               don't prompt for confirmation
  -h, --help       show this help message and exit
  -v, --version    show version information
- ```
+```
 
 ### 本地保留数据
 
  Another improvement to asciinema rec is its ability to save the recording to a local file.
 
-`asciinema rec demo.json`
+	asciinema rec demo.json
 
 This saves the session to demo.json file. Now, you can replay it directly in your terminal:
 
-`asciinema play demo.json`
+	asciinema play demo.json
 
 Finally, if you’re happy about it and you want to share it on asciinema.org just run:
 
-`asciinema upload demo.json`
+	asciinema upload demo.json
 
 If you don’t need to keep your recording local and just want to record and upload in one step, you can still `asciinema rec` without a filename.
 

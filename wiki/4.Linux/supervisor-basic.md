@@ -1,10 +1,10 @@
-学习supervisor
---
+# 学习supervisor
+
 - doc: http://supervisord.org
 - http://lixcto.blog.51cto.com/4834175/1539136
 
-命令
---
+## 命令
+
 - 安装：`pip install supervisor` 或者 `easy-install supervisor`
 - 生成配置文件： `echo_supervisord_conf > /etc/supervisord.conf`
 - 监控：`supervisorctl -c conf/app.conf  status`。其中的`-c`代表配置路径
@@ -26,10 +26,11 @@ password=123
 supervisor下的程序不能作为后台运行
 --
 >Programs meant to be run under supervisor should not daemonize themselves. Instead, they should run in the foreground. They should not detach from the terminal from which they are started.
->
+
 >The easiest way to tell if a program will run in the foreground is to run the command that invokes the program from a shell prompt. If it gives you control of the terminal back, but continues running, it’s daemonizing itself and that will almost certainly be the wrong way to run it under supervisor. You want to run a command that essentially requires you to press Ctrl-C to get control of the terminal back. If it gives you a shell prompt back after running it without needing to press Ctrl-C, it’s not useful under supervisor. **All programs have options to be run in the foreground but there’s no “standard way” to do it; you’ll need to read the documentation for each program.**
 
 比如Nginx在配置中添加：
+
 ```
 daemon off;  #关闭守护进程，使之在前台运行
 master_process off;  #关闭主进程，使只有一个进程
@@ -182,6 +183,7 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// URL  for a unix socket
 ```
 
 上面博文中的注释：
+
 ```
 [unix_http_server]
 file=/tmp/supervisor.sock   ; socket文件的路径，supervisorctl用XML_RPC和supervisord通信就是通过它进行

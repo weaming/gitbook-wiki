@@ -1,3 +1,4 @@
+# 安装PostgreSQL
 ## 源码下载
 
 http://www.postgresql.org/ftp/source/
@@ -35,10 +36,6 @@ su - postgres
 /usr/local/pgsql/bin/createdb test
 /usr/local/pgsql/bin/psql test
 ```
-
-## 更多
-
-[postgresql 入门](/note/postgresql-quickstart/)
 
 ## 参考
 

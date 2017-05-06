@@ -1,5 +1,5 @@
-gvim74 提示报错 “无法加载库python27.dll”
---
+## gvim74 提示报错 “无法加载库python27.dll”
+
 官方提供的gvim安装文件默认是支持python和python3两种模式的,编译时带有该选项,但并没有附带对应的运行库和运行环境.所以在本地没有安装python时直接在vim中执行
 
     :py print 'ok'

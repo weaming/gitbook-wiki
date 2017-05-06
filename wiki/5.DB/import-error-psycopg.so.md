@@ -3,6 +3,7 @@
 	ImportError: /usr/local/lib/python3.4/site-packages/psycopg2/_psycopg.cpython-34m.so: undefined symbol: lo_truncate64
 
 通过如下操作修复：
+
 ```txt
 $ ll /usr/lib |grep libpq
 lrwxrwxrwx  1 root root   12 May 27 08:46 libpq.so.5 -> libpq.so.5.4
@@ -20,6 +21,7 @@ $ ln -s /usr/local/pgsql/lib/libpq.so.5.8 /usr/lib/libpq.so.5
 ```
 
 其中`ll`是我对`ls -alFh`作的映射，通过在`~/.bash_aliases`添加如下一行即可：
+
 	alias ll='ls -alFh'
 
 ## 参考链接

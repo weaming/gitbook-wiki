@@ -1,17 +1,14 @@
-PHP入门及服务环境配置（Nginx+PHP）
+# PHP入门及服务环境配置（Nginx+PHP）
 
-PHP入门
-===
-
-![](http://i.imgur.com/hDjJDC7.png)
+## PHP入门
 
 PHP[维基百科](https://zh.wikipedia.org/wiki/PHP)：
 >PHP（全称：PHP：Hypertext Preprocessor，即“PHP：超文本预处理器”）是一种开源的通用计算机脚本语言，尤其适用于网络开发并可嵌入HTML中使用。PHP的语法借鉴吸收C语言、Java和Perl等流行计算机语言的特点，易于一般程序员学习。PHP的主要目标是允许网络开发人员快速编写动态页面，但PHP也被用于其他很多领域。
 
 最新版本：2015年12月3日 7.0.0发布
 
-应用
----
+### 应用
+
 PHP是一个应用范围很广的语言，特别是在网络程序开发方面。
 
 1. 产生网页提供浏览器读取
@@ -20,8 +17,8 @@ PHP是一个应用范围很广的语言，特别是在网络程序开发方面�
 
 使用PHP不需要任何费用，官方组织PHP Group提供了完整的程序源代码，允许用户修改、编译、扩充来使用。
 
-语法
----
+### 语法
+
 参考了Perl、C语言，而且可以集成在HTML之中。
 
 简单的Hello World代码:
@@ -75,15 +72,9 @@ C与C++所使用的
 
 **PHP框架**
 
-1. Laravel：
-![](http://i.imgur.com/tLrYbxZ.jpg)
-
-2. Symfony2：
-![](http://i.imgur.com/PRgAmeA.png)
-
-3. Thinkphp：
-![](http://i.imgur.com/SnRlSwX.png)
-
+1. Laravel
+2. Symfony2
+3. Thinkphp
 
 **库**
 
@@ -105,18 +96,8 @@ PHP编译器则将PHP从解释器中分离，为加快运行和改善与以其�
 - [PHP 语法教程](http://www.w3school.com.cn/php/)
 - [PHP: PHP 手册 - Manual](https://secure.php.net/manual/zh/index.php)
 
-**PHP 版本**
+## Unix系统下服务环境配置（Nginx+PHP）
 
-论坛评论摘要：
-
-- [5.2到5.3上有挺大的差异吧. 在面向对象方面和资源回收方面都挺多的改进的. 再往上没听说有什么非常特别的变化, 要是新版本没有放映出啥bug就升级下呗](https://www.v2ex.com/t/76554)
-- [5.2：实际开发中没有命名空间，不兼容所有现代 PHP 框架。更重要的是这是一个停止维护很久的版本， 2011 年 1 月后就没有安全补丁了，也就是 2011 ～ 2015 四年间的所有公开漏洞全都在。](https://www.v2ex.com/t/231201)
-- [为什么 centos 源里的 php 一直是 5.3.3 版本？centos 就是以软件老而闻名的。 据说号称是为了稳定性。](https://www.v2ex.com/t/169709)
-
-结论：使用 >=5.3 ，同时不宜太新。
-
-Unix系统下服务环境配置（Nginx+PHP）
-===
 网站和 web 应用程序在通常情况下，需要三样东西：
 
 - PHP 自身
@@ -167,8 +148,9 @@ Nginx（发音同engine x）是一个网页服务器，它能反向代理HTTP, H
 ###直接安装（从安装源）
 
 命令及提示摘要：
+
 ```
-sudo apt-get install nginx
+$ sudo apt-get install nginx
 下列【新】软件包将被安装：
   nginx nginx-common nginx-full
 
@@ -220,10 +202,8 @@ configure arguments: --with-cc-opt='-g -O2 -fstack-protector-strong -Wformat -We
 4 directories, 14 files
 ```
 
-### 从源代码编译安装
+## PHP、php-fpm
 
-PHP、php-fpm
----
 ### 直接（从安装源）安装
 
 - [php为什么有那么多依赖程序？ - SegmentFault](https://segmentfault.com/q/1010000002547169)
@@ -237,56 +217,12 @@ pdo用于取代mysql和mysqli连接数据库，curl用于post，gd用于生成�
 
 ```
 $ sudo apt-get install php5 php5-fpm php-apc php5-curl php5-cli php-pear php5-gd -y
-
-Creating config file /etc/php5/mods-available/pdo.ini with new version
-php5_invoke: Enable module pdo for cli SAPI
-php5_invoke: Enable module pdo for fpm SAPI
-
-Creating config file /etc/php5/mods-available/opcache.ini with new version
-php5_invoke: Enable module opcache for cli SAPI
-php5_invoke: Enable module opcache for fpm SAPI
-正在设置 php5-json (1.3.6-1) ...
-php5_invoke: Enable module json for cli SAPI
-php5_invoke: Enable module json for fpm SAPI
-正在设置 php5-cli (5.6.17+dfsg-0+deb8u1) ...
-update-alternatives: 使用 /usr/bin/php5 来在自动模式中提供 /usr/bin/php (php)
-update-alternatives: 使用 /usr/bin/phar5 来在自动模式中提供 /usr/bin/phar (phar)
-
-Creating config file /etc/php5/cli/php.ini with new version
-正在设置 php-pear (5.6.17+dfsg-0+deb8u1) ...
-正在设置 libapparmor1:amd64 (2.9.0-3) ...
-正在设置 php5-fpm (5.6.17+dfsg-0+deb8u1) ...
-
-Creating config file /etc/php5/fpm/php.ini with new version
-正在设置 php5 (5.6.17+dfsg-0+deb8u1) ...
-正在设置 php5-apcu (4.0.7-1) ...
-php5_invoke: Enable module apcu for cli SAPI
-php5_invoke: Enable module apcu for fpm SAPI
-正在设置 php5-curl (5.6.17+dfsg-0+deb8u1) ...
-
-Creating config file /etc/php5/mods-available/curl.ini with new version
-php5_invoke: Enable module curl for cli SAPI
-php5_invoke: Enable module curl for fpm SAPI
-正在设置 php5-gd (5.6.17+dfsg-0+deb8u1) ...
-
-Creating config file /etc/php5/mods-available/gd.ini with new version
-php5_invoke: Enable module gd for cli SAPI
-php5_invoke: Enable module gd for fpm SAPI
-正在设置 php5-readline (5.6.17+dfsg-0+deb8u1) ...
-
-Creating config file /etc/php5/mods-available/readline.ini with new version
-php5_invoke: Enable module readline for cli SAPI
-php5_invoke: Enable module readline for fpm SAPI
-正在设置 php-apc (4.0.7-1) ...
-正在处理用于 libc-bin (2.19-18+deb8u1) 的触发器 ...
-正在处理用于 systemd (215-17+deb8u2) 的触发器 ...
-正在处理用于 php5-fpm (5.6.17+dfsg-0+deb8u1) 的触发器 ...
 ```
 
 **数据库**
 
 ```
-#sudo apt-get php-mysql php5-pgsql php5-sqlite -y
+$ sudo apt-get php-mysql php5-pgsql php5-sqlite -y
 ```
 
 APT 会自动把适当的行添加到不同的 php.ini 相关文件中去，例如:
@@ -348,17 +284,16 @@ php-cgi是 PHP 的`解释器` ，它只是个 CGI 程序，只能解析请求，
 >你说中文(PHP代码)，他说爱斯基摩语(C代码)，互相听不懂，怎么办？那就都把各自说的话转换成英语(FastCGI 协议)吧。
 
 >怎么转换呢？你就要使用一个翻译机(PHP-FPM)(当然对方也有一个翻译机，那个是他自带的)
-
+>
 >我们这个翻译机是最新型的，老式的那个（PHP-CGI）被淘汰了。不过它(PHP-FPM)只有年轻人（Linux系统）会用，老头子们（Windows系统）不会摆弄它，只好继续用老式的那个。
 
-后期碰到的问题
----
-[nginx上，http状态200响应，PHP空白返回的问题](http://www.cnxct.com/php-return-empty-result-on-nginx-without-script_filename/)
+## 后期碰到的问题
+[nginx上，http状态200响应，PHP空白返回](http://www.cnxct.com/php-return-empty-result-on-nginx-without-script_filename/)
 
 ```
 fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
 ```
 
-参考文档：
-===
+# Links
+
 - [Setting up PHP-FastCGI and nginx? Don’t trust the tutorials: check your configuration!](https://nealpoole.com/blog/2011/04/setting-up-php-fastcgi-and-nginx-dont-trust-the-tutorials-check-your-configuration/)

@@ -1,9 +1,9 @@
+#《淘宝全站https》点评摘要
+
 >HTTPS = HTTP + SSL/TSL
 >
 >SSL 安全套接层（Secure Sockets Layer）；TLS 传输层安全协议（Transport Layer Security）。SSL是TLS的前身。
 
-淘宝全站https点评摘要
----
 来源：[启用全站HTTPS后不仅更安全而且更快 看淘宝是如何做到的](http://weibo.com/p/1001603948661200565978)
 
 启用HTTPS必须解决的难题：

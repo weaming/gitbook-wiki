@@ -1,3 +1,6 @@
+# 《Learn You a Haskell for Great Good》
+
+## Quick & simple note
 ### Keywords
 
 --- 表示省略
@@ -33,10 +36,11 @@
     - value constructor
     - type constructor
         - Maybe
+        - Either
     - Kind
-- Functor `<$>` fmap
-- Applicative `<*>` liftA
-- Monad `>>=` liftM
+- Functor `<$>` `fmap`
+- Applicative `<*>` `liftA`
+- Monad `>>=` `liftM`
 
 ### Types
 
@@ -55,15 +59,8 @@
 - Read
 - Functor
 - Applicative
+- Monoid
 - Monad
-
-### Monoid
-The `Monoid` type class is defined in `import Data.Monoid`
-
-functions:
-- mempty
-- mappend
-- mconcat
 
 ### Type system
 
@@ -104,12 +101,6 @@ A kind is more or less the type of a type.
 - 8.`^`
 - 9.`.`
 
-`<$>`:
-```
-(<$>) :: (Functor f) => (a -> b) -> f a -> f b
-f <$> x = fmap f x
-```
-
 ### Functor
 
 Type constructor
@@ -121,6 +112,12 @@ which means that it has to take exactly one concrete type as a type parameter.
 ```
 class Functor f where
     fmap :: (a -> b) -> f a -> f b
+```
+
+**`<$>`**:
+```
+(<$>) :: (Functor f) => (a -> b) -> f a -> f b
+f <$> x = fmap f x
 ```
 
 `Maybe` is one of type constructor, `Nothing` and `Just a` are all the result values produced by `Maybe`.
@@ -160,6 +157,8 @@ fmap (f . g) F = fmap f (fmap g F)
 ### Applicative
 
 `f` plays the role of our applicative functor instance here:
+
+`Functor` and **`<*>`** definition:
 ```
 class Functor f => Applicative f where
     pure :: a -> f a
@@ -186,6 +185,7 @@ instance applicative ((->) r) where
     f <*> g = \x -> f x (g x)
 ```
 
+Some functions about `applicative`:
 ```
 liftA2 :: (Applicative f) => (a -> b -> c) -> f a -> f b -> f c
 liftA2 f a b = f <$> a <*> b
@@ -207,6 +207,43 @@ ghci> pure "Hey" :: Maybe String
 Just "Hey"
 ```
 
+### Monoid
+The `Monoid` type class is defined in `import Data.Monoid`
+
+```
+class Monoid m where
+    mempty :: m
+    mappend :: m -> m -> m
+    mconcat :: [m] -> m
+    mconcat = foldr mappend mempty
+```
+
+### Monad
+
+`Monad`s are a natural extension of applicative functors and with them we're concerned with this:
+
+if you have a value with a context, `m a`, how do you apply to it a function that takes a normal a and returns a value with a context?
+That is, how do you apply a function of type `a -> m b` to a value of type `m a`?
+
+So essentially, we will want this function **`>>=`**:
+
+    (>>=) :: (Monad m) => m a -> (a -> m b) -> m b
+
+The `>>=` function is pronounced as *bind*.
+
+```
+class Monad m where  
+    return :: a -> m a  
+  
+    (>>=) :: m a -> (a -> m b) -> m b  
+  
+    (>>) :: m a -> m b -> m b  
+    x >> y = x >>= \_ -> y  
+  
+    fail :: String -> m a  
+    fail msg = error msg  
+```
+
 ## Conlusions from articles
 
 1. A `functor` is a data type that implements the `Functor` typeclass.
@@ -215,8 +252,12 @@ Just "Hey"
 4. A `Maybe` implements all three, so it is a functor, an applicative, and a monad.
 
 - functors: you apply a function to a wrapped value using `fmap` or `<$>`
-- applicatives: you apply a wrapped function to a wrapped value using `<*`> or `liftA`
+- applicatives: you apply a wrapped function to a wrapped value using `<*>` or `liftA`
 - monads: you apply a function that returns a wrapped value, to a wrapped value using `>>=` or `liftM`
+
+## 图解
+
+![图解`<$> <*> >>=`](/img/1704/0.jpg)
 
 ## Links
 

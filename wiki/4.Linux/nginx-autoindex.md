@@ -1,3 +1,5 @@
+# Nginx列出文件夹及其文件
+
 开启 autoindex
 
     autoindex on;

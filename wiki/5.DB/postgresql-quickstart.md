@@ -25,6 +25,7 @@ pssql # 在linux用户postgres用户下登录pgsql控制台，登录的是与lin
 **控制台下命令：**
 
 普通用户登陆后显示
+
 ```
 psql (9.3.10)
 Type "help" for help.
@@ -116,12 +117,15 @@ PostgreSQL数据目录中的`pg_hba.conf`的作用就是用户认证。
 我的ubuntu14.04上，此配置文件在目录`/etc/postgresql/9.3/main/`
 
 (1)允许在本机上的任何身份连接任何数据库
+
 ```
 TYPE DATABASE USER IP-ADDRESS IP-MASK METHOD
 
 local all all trust(无条件进行连接)
 ```
+
 (2)允许IP地址为192.168.1.x的任何主机与数据库sales连接
+
 ```
 TYPE DATABASE USER IP-ADDRESS IP-MASK METHOD
 

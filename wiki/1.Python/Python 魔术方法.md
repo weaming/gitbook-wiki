@@ -26,7 +26,7 @@ Python的[内置方法](https://docs.python.org/2/library/functions.html)、关�
 
 >If `__setattr__`() wants to assign to an instance attribute, it should not simply execute `self.name = value` — this would cause a recursive call to itself. Instead, it should insert the value in the dictionary of instance attributes, e.g., `self.__dict__[name] = value`. For new-style classes, rather than accessing the instance dictionary, it should call the base class method with the same name, for example, `object.__setattr__(self, name, value)`.
 
-这里说明了如何处理循环调用的问题。
+这里说明了如何处理循环调用的问题，就是调用最原始的对象`object`的`__setattr__`方法来处理，类似于JS的`Object.prototype`或者`Array.prototype`里的方法调用。
 
 `object.__delattr__(self, name)`
 
