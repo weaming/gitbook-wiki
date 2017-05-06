@@ -2,6 +2,7 @@
     * [Python包管理](./wiki/1.Python/Python包管理.md)
     * [Python2 编码](./wiki/1.Python/Python2 编码.md)
     * [Python 魔术方法](./wiki/1.Python/Python 魔术方法.md)
+    * [dict-in-python](./wiki/1.Python/dict-in-python.md)
     * [Python是很动态的语言](./wiki/1.Python/Python是很动态的语言.md)
     * [Python 装饰器](./wiki/1.Python/Python 装饰器.md)
     * [Python 异常](./wiki/1.Python/Python 异常.md)
@@ -40,7 +41,6 @@
     * [install-postgresql](./wiki/5.DB/install-postgresql.md)
     * [import-error-psycopg.so](./wiki/5.DB/import-error-psycopg.so.md)
     * [postgresQA](./wiki/5.DB/postgresQA.md)
-    * [dict-in-python](./wiki/5.DB/dict-in-python.md)
 * 6.GEEK
     * [Asciinema-终端下好用的录屏软件](./wiki/6.Geek/Asciinema-终端下好用的录屏软件.md)
     * [图片归档脚本](./wiki/6.Geek/图片归档脚本.md)
