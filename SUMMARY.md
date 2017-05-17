@@ -1,6 +1,6 @@
 * 1.PYTHON
-    * [Python包管理](./wiki/1.Python/Python包管理.md)
     * [Python2 编码](./wiki/1.Python/Python2 编码.md)
+    * [Python包管理](./wiki/1.Python/Python包管理.md)
     * [Python 魔术方法](./wiki/1.Python/Python 魔术方法.md)
     * [dict-in-python](./wiki/1.Python/dict-in-python.md)
     * [Python是很动态的语言](./wiki/1.Python/Python是很动态的语言.md)

@@ -7,17 +7,36 @@
 ## 维基定义
 
 *[Unicode](https://zh.wikipedia.org/wiki/Unicode)*
-> Unicode（中文：万国码、国际码、统一码、单一码）是计算机科学领域里的一项业界标准。它对世界上大部分的文字系统进行了整理、编码，使得电脑可以用更为简单的方式来呈现和处理文字。
+> Unicode（中文：万国码、国际码、统一码、单一码）是计算机科学领域里的一项业界标准。它对世界上大部分的文字系统进行了整理、编码，使得电脑可以用更为简单的方式来呈现和处理文字。Unicode伴随着通用字符集的标准而发展，同时也以书本的形式对外发表。Unicode至今仍在不断增修，每个新版本都加入更多新的字符。目前最新的版本为2016年6月21日公布的`9.0.0`，已经收入超过十万个字符。
 
 > Developed in conjunction with the **Universal Coded Character Set** (UCS) standard and published as The Unicode Standard, the latest version of Unicode contains a repertoire of more than 128,000 characters covering 135 modern and historic scripts, as well as multiple symbol sets. 
 
-就是说unicode是字符的**计算机二进制表示**和**真实字符**的一个对应关系（编码字符集）。
+就是说unicode是字符的**计算机二进制表示**和**真实字符**的一个对应关系（编码字符集）。而字符怎么样显示，则取决于用户的图形显示软件（包括浏览器，操作系统，字体等）。
+
+`统一码`的编码方式与`ISO 10646`的通用字符集概念相对应。**目前实际应用的统一码版本对应于`UCS-2`，使用`16位`的编码空间。也就是`每个字符占用2个字节`。**这样理论上一共最多可以表示2^16（即65536）个字符。基本满足各种语言的使用。实际上当前版本的统一码并未完全使用这16位编码，而是保留了大量空间以作为特殊使用或将来扩展。
+
+上述16位统一码字符构成`基本多文种平面`。最新（但未实际广泛使用）的统一码版本定义了[16个辅助平面](https://zh.wikipedia.org/wiki/Unicode%E5%AD%97%E7%AC%A6%E5%B9%B3%E9%9D%A2%E6%98%A0%E5%B0%84)。目前的Unicode字符分为`17组`编排，每组称为`平面`（Plane），而每平面拥有`65536`（即2^16）个代码点。然而目前只用了少数平面。辅助平面（除开0号平面）至少需要占据21位(`1+5*4`,恒为0的首位)的编码空间，比3字节略少。但事实上辅助平面字符仍然占用4字节编码空间（前面补0），与`UCS-4`保持一致。未来版本会扩充到`ISO 10646-1`实现级别3，即涵盖`UCS-4`的所有字符。**UCS-4是一个更大的尚未填充完全的31位字符集，加上恒为0的首位，共需占据32位，即4字节。**理论上最多能表示2^31个字符，完全可以涵盖一切语言所用的符。
+
+```
+>>> u'有'
+u'\u6709'
+>>> u'调整'
+u'\u8c03\u6574'
+>>> u'𠅘'
+u'\U00020158'
+>>> u'𡚦'
+u'\U000216a6'
+```
+
+总结一下，unicode占2个字节或者4个字节。
 
 *[UTF-8](https://en.wikipedia.org/wiki/UTF-8)*
 
 > UTF-8 is a character encoding capable of encoding all possible characters, or code points.
 
-UTF-8是多种编码方式里最流行通用的一种。
+Unicode的`实现方式`不同于`编码方式`。**一个字符的Unicode编码是确定的。**但是在**实际传输过程**中，由于不同系统平台的设计不一定一致，以及**出于节省空间的目的**，对Unicode编码的实现方式有所不同。Unicode的实现方式称为`Unicode转换格式`（Unicode Transformation Format，简称为`UTF`）
+
+`UTF-8`是多种`实现方式`里最流行通用的一种。
 
 ## Stackoverflow
 
